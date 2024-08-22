@@ -222,6 +222,10 @@ function processValues(heatpumpValues, heatpumpVisibility) {
         LIN_HD: heatpumpValues[180],
         LIN_ND: heatpumpValues[181],
         LIN_VDH_out: heatpumpValues[182],
+
+        thermalPower: heatpumpValues[257],
+        inputPower: heatpumpValues[268],
+        
     };
 }
 
