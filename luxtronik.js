@@ -309,6 +309,8 @@ function processParameters(heatpumpParameters, heatpumpVisibility) {
         heating_system_circ_pump_voltage_nominal: heatpumpParameters[867] / 100,
         heating_system_circ_pump_voltage_minimal: heatpumpParameters[868] / 100,
 
+        ZWE1_power: heatpumpParameters[1131] / 10,
+
         // ---- Timer table configurations ----
 
         // Activated timer table for heating operation.
@@ -766,6 +768,10 @@ Luxtronik.prototype._handleWriteCommand = function (parameterName, realValue, ca
         heating_system_circ_pump_voltage_minimal: {
             setParameter: 868,
             setValue: utils.value2LuxtronikSetHundrethValue(realValue),
+        },
+        ZWE1_power: {
+            setParameter: 1131,
+            setValue: parseInt(realValue * 10),
         },
         wrongName: {
             //setParameter: undefined,
